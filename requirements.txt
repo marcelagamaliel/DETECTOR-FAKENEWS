@@ -1,0 +1,16 @@
+pandas
+numpy
+scikit-learn
+notebook
+scipy
+matplotlib
+nltk
+spacy
+unidecode
+joblib
+seaborn
+
+# Para Transformers
+torch
+transformers
+datasets
