@@ -1,8 +1,67 @@
-.venv/
+# ===========================
+# Python
+# ===========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pkl
+*.log
+*.egg-info/
+*.venv/
+env/
+venv/
+ENV/
 
-# Ignorar todos os arquivos temporários do Jupyter
+# ===========================
+# Jupyter Notebook
+# ===========================
+.ipynb_checkpoints/
 *.ipynb_checkpoints
 
-# Ignorar arquivos de lock/temporários do LibreOffice/Excel
-.~lock*
+# ===========================
+# Dados grandes / temporários
+# ===========================
+data/**/*.csv
+data/**/*.tsv
+data/**/*.xlsx
+data/**/*.zip
+data/**/*.tar.gz
+data/**/*.json
+# Se quiser, pode manter apenas amostras pequenas:
+# data/sample.csv
 
+# ===========================
+# Arquivos de lock / temporários do LibreOffice / Excel
+# ===========================
+.~lock*
+*.~lock
+
+# ===========================
+# Sistema / IDE
+# ===========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ===========================
+# Logs
+# ===========================
+*.log
+
+# ===========================
+# Resultados de treino / modelos
+# ===========================
+models/
+checkpoints/
+*.h5
+*.pt
+*.ckpt
+
+# ===========================
+# Outros
+# ===========================
+*.tmp
+*.swp
