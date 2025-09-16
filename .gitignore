@@ -29,6 +29,7 @@ data/**/*.xlsx
 data/**/*.zip
 data/**/*.tar.gz
 data/**/*.json
+data/processed
 # Se quiser, pode manter apenas amostras pequenas:
 # data/sample.csv
 
