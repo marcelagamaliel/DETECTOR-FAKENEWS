@@ -1,1 +1,8 @@
 .venv/
+
+# Ignorar todos os arquivos temporários do Jupyter
+*.ipynb_checkpoints
+
+# Ignorar arquivos de lock/temporários do LibreOffice/Excel
+.~lock*
+
