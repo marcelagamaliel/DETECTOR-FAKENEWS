@@ -13,7 +13,7 @@ app = FastAPI(title="Fake News Detector API (TF-IDF + Random Forest)")
 # Permitir chamadas do frontend (HTML local)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # em produção, restrinja ao domínio real
+    allow_origins=["http://localhost:3000"],  # em produção, restrinja ao domínio real
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -28,10 +28,10 @@ app.mount("/static", StaticFiles(directory="src/api/static"), name="static")
 MODEL_PATH = "models/random_forest.pkl"
 VECTORIZER_PATH = "models/tfidf_vectorizer.pkl"
 
-print("🔹 Carregando modelo e vetorizador...")
+print("Carregando modelo e vetorizador...")
 model = joblib.load(MODEL_PATH)
 vectorizer = joblib.load(VECTORIZER_PATH)
-print("✅ Modelo Random Forest e TF-IDF carregados com sucesso!")
+print("Modelo Random Forest e TF-IDF carregados com sucesso!")
 
 # =======================================================
 # Estrutura do input
