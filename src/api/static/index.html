@@ -1,20 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Detector de Fake News</title>
-  <link rel="stylesheet" href="/static/style.css">
+  <meta charset="UTF-8" />
+  <title>Detector de Fake News | Sistema Acadêmico</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Sistema acadêmico de análise automática de notícias."/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="style.css"/>
 </head>
+
 <body>
-  <div class="container">
-    <h1>Detector de Fake News</h1>
-    <p>Digite abaixo uma notícia para verificar se é <strong>real</strong> ou <strong>fake</strong>.</p>
-    <form id="form" onsubmit="handleSubmit(event)">
-      <textarea id="newsInput" placeholder="Cole aqui o texto da notícia..." required></textarea>
-      <button type="submit">Analisar</button>
-    </form>
-    <div id="result"></div>
-  </div>
-  <script src="/static/main.js"></script>
+  <main class="container">
+    <header class="header">
+      <div class="header-content">
+        <div class="logo-badge">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+          </svg>
+        </div>
+        <div class="header-text">
+          <h1>Verificador de Notícias</h1>
+          <p class="subtitle">Análise instantânea baseada em padrões linguísticos.</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="info-box">
+      <h2>Como utilizar o sistema</h2>
+      <ul class="user-guidelines">
+        <li>- Insira o <strong>texto completo</strong> da notícia para análise.</li>
+        <li>- O conteúdo deve possuir ao menos <strong>100 caracteres</strong>.</li>
+        <li>- Quanto mais contexto, <strong>mais precisa</strong será a análise.</li>
+        <li>- O sistema não armazena nenhum dado enviado.</li>
+        <li>- Este verificador <strong>não substitui</strong> a checagem humana.</li>
+        <li>- O resultado é baseado em padrões encontrados em bases reais de notícias.</li>
+      </ul>
+    </section>
+
+    <section class="analysis-card">
+      <div class="card-header">
+        <h2>Analisar notícia</h2>
+        <p class="card-description">Cole abaixo o texto a ser verificado.</p>
+      </div>
+
+      <form id="form" class="form" onsubmit="handleSubmit(event)">
+        <textarea
+          id="newsInput"
+          class="textarea"
+          placeholder="Ex.: Governo anuncia novo programa econômico para impulsionar..."
+          required
+        ></textarea>
+
+        <div class="form-footer">
+          <small class="hint">Os dados não são armazenados. Uso exclusivo para análise.</small>
+          <button type="submit" id="submitBtn" class="btn btn-primary">
+            <span class="btn-text">Analisar notícia</span>
+            <span class="btn-spinner"></span>
+          </button>
+        </div>
+      </form>
+
+      <div id="result" class="result hidden"></div>
+    </section>
+
+    <section class="disclaimer">
+      <h3>Importante entender</h3>
+      <p>
+        O modelo identifica padrões linguísticos comuns em notícias reais e falsas 
+        com base no corpus <strong>Fake.Br</strong>. Como todo sistema baseado em aprendizado de máquina,
+        pode apresentar limitações e incertezas. Utilize o resultado como um apoio,
+        não como uma conclusão absoluta.
+      </p>
+    </section>
+
+    <footer class="footer">
+      <p>
+        © 2025 • Desenvolvido por <strong>Marcela Gamaliel</strong> 
+        como parte do Trabalho de Conclusão de Curso — Ciência da Computação.  
+      </p>
+      <p>
+        Tecnologias utilizadas: Python • FastAPI • TF-IDF • Random Forest • HTML • CSS • JS  
+      </p>
+      <p>
+        Base de dados: <strong>Fake.Br Corpus</strong> (H. P. Carvalho et al.)  
+      </p>
+    </footer>
+
+  </main>
+
+  <script src="main.js"></script>
 </body>
 </html>
