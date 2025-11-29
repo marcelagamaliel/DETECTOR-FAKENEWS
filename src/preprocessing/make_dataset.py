@@ -63,7 +63,7 @@ def load_and_prepare(path):
     df = df.dropna(subset=["text", "label"]).reset_index(drop=True)
     print(f"Removidas {n0 - len(df)} linhas com NaN em text/label.")
 
-    # deduplicar texto (precaução)
+    # deduplicar texto
     n_before = len(df)
     df = df.drop_duplicates(subset=["text"]).reset_index(drop=True)
     print(f"Removidas {n_before - len(df)} duplicatas exatas de texto.")
