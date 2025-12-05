@@ -41,4 +41,4 @@ with open("models/results_baseline_val.csv", "w", newline="") as f:
     writer.writerow(["Modelo", "Acurácia", "F1-Score", "AUC"])
     writer.writerows(results)
 
-print("\n✅ Resultados de validação salvos em: models/results_baseline_val.csv")
+print("\nResultados de validação salvos em: models/results_baseline_val.csv")
