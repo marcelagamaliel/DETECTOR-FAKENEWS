@@ -44,7 +44,7 @@ detector-fakeNews/
 ## Instalação do Ambiente
 
 ### 1️. Clone o repositório
-    git clone https://github.com/marcelagamaliel/detector-fakeNews.git
+    git clone https://github.com/marcelagamaliel/DETECTOR-FAKENEWS.git
     cd detector-fakeNews
 
 ### 2. Crie e ative o ambiente virtual
