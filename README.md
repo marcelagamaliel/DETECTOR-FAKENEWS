@@ -47,10 +47,12 @@ detector-fakeNews/
     git clone https://github.com/marcelagamaliel/DETECTOR-FAKENEWS.git
     cd detector-fakeNews
 
-### 2. Crie e ative o ambiente virtual
+### 2. Crie e ative o ambiente virtual (Linux/Mac)
     python3 -m venv .venv
     source .venv/bin/activate
-
+#### Windows
+    py -m venv .venv
+    .venv\Scripts\activate
 ### 3.Instale as dependências 
     pip install -r requirements.txt
 
@@ -94,7 +96,7 @@ E a interface Web em: http://127.0.0.1:8000/static/index.html
 4. Clique em **Analisar**
 5. Veja o resultado da predição ("FAKE" ou "REAL") + probabilidade
     
-##  Reproduzir do Zero
+##  Reproduzir do Zero (Linux/Mac)
 Se quiser rodar tudo novamente:
 ```
 rm -rf data/processed models
@@ -103,6 +105,16 @@ python src/models/train_baseline.py
 python src/models/evaluate_baseline.py
 uvicorn src.api.app:app --reload
 ```
+### Windows 
+```
+rmdir /s /q data\processed
+rmdir /s /q models
+python src/preprocessing/make_dataset.py
+python src/models/train_baseline.py
+python src/models/evaluate_baseline.py
+uvicorn src.api.app:app --reload
+```
+
 ## Avaliar métricas e comparações
 #### Executar o Jupyter
     jupyter notebook
