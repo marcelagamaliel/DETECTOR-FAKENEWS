@@ -16,3 +16,8 @@ transformers
 datasets
 sentence-transformers
 tqdm
+
+# API
+fastapi>=0.110
+uvicorn[standard]>=0.38.0
+python-dotenv
