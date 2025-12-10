@@ -55,7 +55,7 @@ Thumbs.db
 # ===========================
 # Resultados de treino / modelos
 # ===========================
-models/
+/models/
 checkpoints/
 *.h5
 *.pt
