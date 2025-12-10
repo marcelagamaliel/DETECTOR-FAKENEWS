@@ -1,9 +1,14 @@
-# evaluate_embeddings.py (versão final)
 from pathlib import Path
 import joblib
 import pandas as pd
 import seaborn as sns
+
+
+import matplotlib
+matplotlib.use("Agg")   # backend sem interface gráfica
 import matplotlib.pyplot as plt
+
+
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics import (
     accuracy_score, f1_score, roc_auc_score,
@@ -31,6 +36,7 @@ model = joblib.load("models/linear_svm_embeddings.pkl")
 preds = model.predict(X_test)
 acc = accuracy_score(y_test, preds)
 f1 = f1_score(y_test, preds)
+
 try:
     auc = roc_auc_score(y_test, preds)
 except:
@@ -39,12 +45,23 @@ except:
 print("=== Relatório (TEST) ===")
 print(classification_report(y_test, preds, digits=4))
 print("Matriz de Confusão:")
+
+# Matriz de confusão
 cm = confusion_matrix(y_test, preds)
+
+# Plot da matriz — agora sem show(), apenas salvando
+plt.figure(figsize=(6, 4))
 sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
 plt.title("Matriz de Confusão - SVM (Embeddings)")
 plt.xlabel("Predito")
 plt.ylabel("Real")
-plt.show()
+
+# Salvar o gráfico (já que no Windows show() não funciona sem Tk)
+output_fig = "models/confusion_matrix_embeddings.png"
+plt.savefig(output_fig, dpi=300, bbox_inches="tight")
+plt.close()
+
+print(f"> Matriz salva em: {output_fig}")
 
 print(f"Acurácia: {acc:.4f}")
 print(f"F1-Score: {f1:.4f}")
