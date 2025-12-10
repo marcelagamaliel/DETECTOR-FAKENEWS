@@ -73,7 +73,7 @@ Isso criará:
     python src/models/train_embeddings.py
 
 ## Avaliar os Modelos
-### TF-IFD 
+### TF-IDF
     python src/models/evaluate_baseline.py
 ### Embeddings - Opcional (Apenas se quiser analisar notebooks)
     python src/models/evaluate_embeddings.py
